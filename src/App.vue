@@ -9,10 +9,12 @@ export default {};
 </script>
 
 <style>
+
+
 body {
-  background-color: #333;
+  background-color: #080808;
   color: #fff;
-  font-family: sans-serif;
+  font-family: 'futura-pt',Arial,sans-serif;
   margin: 0;
 }
 

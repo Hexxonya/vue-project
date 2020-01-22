@@ -1,33 +1,38 @@
 <<template>
   <div class="body">
-    <div class="text">
+    <div class="textTheory">
       <h1> {{ titles[index].title}}</h1>
-      <p>Чтобы начать создание сайтов мы должны узнать немного о том,
-        какие элементы HTML лучше всего использовать для отображения различных типов содержимого.
-        Важно также понять, как элементы визуально отображаются на веб-странице,
-        а также что различные элементы означают семантически.</p>
-      <p> Добавь <link rel="stylesheet" href="style.css"> в тег head </p>
-
+      <p> {{ texts[index].text}} </p>
+      <p> {{ tasks[index].task}}</p>
       <div class="editor">
         <div class="lineNumbers">
           1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10
         </div>
         <textarea class="code" v-on:input="changeCode">
- <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-  </head>
+<!DOCTYPE html>
+<html lang="ru">
+← Открой тэг тут -->
+<title> Web-technology </title>
+← И закрой тут-->
   <body>
+<h1>Привет</h1>
   </body>
- </html>
+</html>
         </textarea>
+        <button @click="riseIndex">продолжить</button>
       </div>
-      <button @click="riseIndex">продолжить</button>
     </div>
     <div class="view">
       <div v-html="code"></div>
       <h2>Чему вы научитесь?</h2>
+      <li>Обзор семантики</li>
+      <li>Использование текстовых элементов</li>
+      <li>Создание структуры</li>
+      <li>Знакомство с CSS</li>
+      <img src="../assets/shapes-01.svg" alt="">
+      <img src="../assets/shapes-03.svg" alt="">
+      <img src="../assets/shapes-07.svg" alt="">
+      <img src="../assets/shapes-10.svg" alt="">
     </div>
   </div>
 </template>
@@ -41,6 +46,17 @@
        titles: [
          { title: "Первые шаги"},
          { title: "второе задание"},
+       ],
+       texts: [
+         { text: "Тег <head> является “головой” html-кода и одной из 2 основных его составляющих, " +
+             "он предназначен для хранения служебной информации о странице, а именно название сайта в строке URL, " +
+             "присваивание стилей, а также подключение css-документов. Он располагается первым в теге <html>," +
+             " сразу перед <body>."},
+         { text: "второе задание"},
+       ],
+       tasks: [
+         { task: "Попробуй создать “голову” сайта с помощью открывающего тэга <head> и закрывающего </ head>"},
+         { task: "второе задание"},
        ],
      };
    },
@@ -58,12 +74,13 @@
 
 <<style scoped>
 
+
   .body {
     display: flex;
   }
 
   .editor {
-    width: 70%;
+    width: 85%;
     height: 320px;
     padding: 10px 10px 10px 40px;
     background-color: #ddd;
@@ -91,7 +108,7 @@
      background-color: #ddd;
      line-height: 2.4;
   }
- .text {
+ .textTheory {
        width: 50%;
        box-sizing: border-box;
        padding: 2em;
@@ -106,6 +123,9 @@
     color: #fff;
     cursor: pointer;
     padding: 10px 20px 10px 20px;
+     position: absolute;
+     margin-top: 250px;
+
   }
   button:active {
   outline: none;
@@ -119,6 +139,10 @@ button:not(.disabled):hover {
       box-sizing: border-box;
        padding: 2em;
        color: black;
+  }
+
+  img {
+    width: 150px;
   }
 
 </style>
