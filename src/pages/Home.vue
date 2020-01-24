@@ -1,4 +1,6 @@
- <<template>
+
+<<template>
+
  <div>
    <img id="one" src="../assets/shapes-01.svg" alt="">
    <img id="two" src="../assets/shapes-02.svg" alt="">
@@ -17,8 +19,11 @@
                Тебя приветствуем Московский политехнический университет или просто Политех.
                Сегодня ты узнаешь чему учат на направлении веб-технологии, о том как создаются сайты,
                а также лично примешь участие в его создании.Удачи!</p>
-  <router-link to="/theory" >
-         <button>Начать</button></router-link>
+             <router-link to="/theory" >
+               <button>Начать</button></router-link>
+           <vue-page-transition name="fade-in-up">
+             <router-view />
+           </vue-page-transition>
          </div>
      </div>
  </div>

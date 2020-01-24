@@ -33,5 +33,24 @@ body {
 
   }
 
+p::selection {
+  color: #fff;
+  background: #17e7a4;
+}
+h1::selection {
+  color: #fff;
+  background: #17e7a4;
+}
+h2::selection {
+  color: #fff;
+  background: #17e7a4;
+}
+
+button::selection {
+  color: #fff;
+  background: #17e7a4;
+}
+
+
 </style>
 
